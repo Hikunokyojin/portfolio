@@ -25,3 +25,13 @@ dist-ssr
 
 .vercel
 .env*
+
+# Claude / AI tooling (local only)
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+.ccg/
+.context/
+.codegraph/
+design-evidence/
