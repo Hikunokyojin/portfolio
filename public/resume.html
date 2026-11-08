@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Divik Bhaskar — Résumé</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink:#111827; --muted:#4b5563; --accent:#b4441b; --line:#e5e7eb; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #eef1f5; font-size: 10.5pt; line-height: 1.45; }
+  .page { max-width: 820px; margin: 24px auto; background: #fff; padding: 40px 48px; box-shadow: 0 4px 24px #0001; }
+  .bar { max-width: 820px; margin: 16px auto 0; display: flex; gap: 8px; justify-content: flex-end; padding: 0 16px; }
+  .bar a, .bar button { font: inherit; border: 1px solid var(--accent); color: var(--accent); background: #fff; padding: 6px 14px; border-radius: 999px; cursor: pointer; text-decoration: none; }
+  .bar button { background: var(--accent); color: #fff; }
+  h1 { font-size: 24pt; letter-spacing: -0.5px; }
+  .title { color: var(--accent); font-weight: 600; margin-top: 2px; }
+  .contact { color: var(--muted); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .contact a { color: inherit; text-decoration: none; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); border-bottom: 1.5px solid var(--line); padding-bottom: 3px; margin: 18px 0 8px; }
+  .row { display: flex; justify-content: space-between; gap: 12px; font-weight: 600; }
+  .row span:last-child { font-weight: 400; color: var(--muted); white-space: nowrap; }
+  .sub { color: var(--muted); font-style: italic; }
+  ul { padding-left: 16px; margin: 4px 0 10px; }
+  li { margin: 2px 0; }
+  .skills p { margin: 2px 0; }
+  .skills b { display: inline-block; min-width: 120px; }
+  @media (max-width: 600px) { .page { padding: 24px 18px; margin: 12px 0; } .row { flex-direction: column; gap: 0; } }
+  @media print {
+    body { background: #fff; font-size: 10pt; }
+    .bar { display: none; }
+    .page { box-shadow: none; margin: 0; padding: 0; max-width: none; }
+    @page { margin: 14mm 14mm; }
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="/">← Portfolio</a>
+  <button onclick="window.print()">Download PDF</button>
+</div>
+<main class="page">
+  <header>
+    <h1>Divik Bhaskar</h1>
+    <p class="title">Backend &amp; Cloud Security Engineer · AI-Agent Systems</p>
+    <p class="contact">
+      <span>Bengaluru, India</span>
+      <a href="mailto:divikbhaskar@gmail.com">divikbhaskar@gmail.com</a>
+      <a href="https://www.linkedin.com/in/divik-bhaskar">linkedin.com/in/divik-bhaskar</a>
+      <a href="https://github.com/Hikunokyojin">github.com/Hikunokyojin</a>
+    </p>
+  </header>
+
+  <h2>Summary</h2>
+  <p>IT undergraduate at VIT building zero-trust cloud architecture, fast backends and AI-agent systems. Focused on how data is stored efficiently, retrieved fast, and protected without trusting the network. Open to backend / cloud engineering internships and roles.</p>
+
+  <h2>Education</h2>
+  <div class="row"><span>Vellore Institute of Technology (VIT), Vellore</span><span>2024 – 2028</span></div>
+  <p class="sub">B.Tech, Information Technology</p>
+  <div class="row"><span>GEAR Innovative International School</span><span>2012 – 2024</span></div>
+  <p class="sub">High School Diploma (Grades 1–12) · Basketball team, event management</p>
+
+  <h2>Experience</h2>
+  <div class="row"><span>Summer Intern — Unisys, Bengaluru</span><span>May – Jul 2026</span></div>
+  <p class="sub">LMBridge: secure on-prem to Azure bridge</p>
+  <ul>
+    <li>Connected an on-prem Win32 C++ desktop application to Azure through a hardened ASP.NET Core API gateway</li>
+    <li>Isolated the database with Private Endpoints and VNet Integration, eliminating all public network access</li>
+    <li>Managed secrets with Azure Key Vault + RBAC and service-to-service auth with managed identities; zero hardcoded credentials</li>
+    <li>Implemented JWT issuance and validation middleware for the gateway</li>
+    <li>Built CI/CD with SonarQube static analysis and SCA dependency scanning; resolved platform- and network-level deployment blockers</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <div class="row"><span>SAGE — Service-Agent Graph Ecosystem</span><span>Jul 2026 – present</span></div>
+  <p class="sub">AWS Bedrock, Lambda, LangGraph, TypeScript, MongoDB Atlas, Qdrant</p>
+  <ul>
+    <li>Architected an AI-driven cloud service marketplace with LangGraph agents: Intent → Broker → Negotiator → Reviewer → Explainer</li>
+    <li>Showed a deterministic Negotiator beats an LLM-based one (88.9% vs 63.0% selection accuracy, 35% fewer LLM calls)</li>
+    <li>Built a prompt-injection Input Guard passing 21/21 adversarial and benign cases, with known evasion gaps documented</li>
+    <li>Designed a 27-case evaluation suite with 3 baselines and a 6-condition ablation study, reaching 0% constraint violations</li>
+    <li>Fixed a reasoning-model token-budget defect, raising valid-JSON rate from 50% to 100%</li>
+  </ul>
+
+  <div class="row"><span>Aegis — Zero-day Vulnerability Detection (research)</span><span>2026</span></div>
+  <p class="sub">Python, PyTorch Geometric, CodeBERT, Joern</p>
+  <ul>
+    <li>Modelled C++/Java functions as heterogeneous Code Property Graphs (AST + control flow + data flow)</li>
+    <li>Fused CodeBERT node embeddings with a heterogeneous GNN; leak-free splitting on BigVul; pytest suite for every pipeline stage</li>
+  </ul>
+
+  <div class="row"><span>ThreadHaul-Daemon — Adaptive CPU Priority Throttler (team of 3)</span><span>2026</span></div>
+  <p class="sub">C++, Win32 APIs, Windows Services</p>
+  <ul>
+    <li>Built a native Windows service preventing CPU starvation of critical logistics processes by demoting and suspending batch workloads</li>
+    <li>Designed a throttle → suspend → recover state machine with adaptive thresholds, hot-reloaded JSON config and Windows Event Log auditing</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><b>Languages</b> Java, C, C++, C#, SQL, TypeScript, Python</p>
+    <p><b>Backend / Web</b> ASP.NET Core, React, Next.js, Flask, REST, JWT</p>
+    <p><b>Cloud</b> Azure (Key Vault, VNet, Private Endpoints, Managed Identity), AWS (Bedrock, Lambda, EC2)</p>
+    <p><b>AI / ML</b> LangGraph, multi-agent systems, GNNs, CodeBERT, prompt engineering</p>
+    <p><b>Security / DevOps</b> DevSecOps, SonarQube, SCA, IAM / RBAC, CI/CD</p>
+  </div>
+
+  <h2>Leadership &amp; Certifications</h2>
+  <ul>
+    <li>Senior Core, IEEE Computer Society – VIT (Jul 2025 – May 2026); Junior Core, CSI – VIT (Mar 2025 – Apr 2026)</li>
+    <li>Event Director, Valour '24 – GEAR Foundation sports fest (2024)</li>
+    <li>IBM: Python for Data Science, AI &amp; Development (2026); Generative AI: Prompt Engineering Basics (2026)</li>
+    <li>District-level Chief Minister Cup medalist, basketball</li>
+  </ul>
+</main>
+</body>
+</html>

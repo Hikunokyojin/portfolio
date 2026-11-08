@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f3ee;
+  --fg: #1b1a18;
+  --muted: #6e6b64;
+  --line: #dcd8ce;
+  --soft: #ebe8e0;
+  --accent: #b4441b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131312;
+    --fg: #e9e7e1;
+    --muted: #9a968d;
+    --line: #2b2a27;
+    --soft: #1d1c1a;
+    --accent: #e0814f;
+  }
+}
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-soft: var(--soft);
+  --color-accent: var(--accent);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.link {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color .2s, color .2s;
+}
+.link:hover { text-decoration-color: var(--accent); color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
